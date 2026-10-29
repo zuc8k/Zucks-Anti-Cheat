@@ -1,0 +1,40 @@
+generator client { provider = "prisma-client-js" }
+datasource db    { provider = "sqlite"; url = "file:./zucks.db" }
+
+model User {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+}
+
+model Ban {
+  id        Int      @id @default(autoincrement())
+  ip        String
+  reason    String
+  profileId String?
+  durationMin Int
+  createdAt DateTime @default(now())
+  expiresAt DateTime?
+  active    Boolean  @default(true)
+  @@index([ip])
+}
+
+model Event {
+  id        Int      @id @default(autoincrement())
+  ip        String
+  profileId String?
+  type      String
+  detail    String
+  createdAt DateTime @default(now())
+  @@index([createdAt])
+}
+
+model VersionProfileDb {
+  id          String   @id           // profile.id
+  displayName String
+  json        String                 // full JSON
+  enabled     Boolean  @default(true)
+  updatedAt   DateTime @updatedAt
+}
