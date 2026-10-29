@@ -1,0 +1,17 @@
+{
+  "id": "cf-v1469",
+  "displayName": "CrossFire v1469 (Newer)",
+  "magic": [241],
+  "headerSize": 10,
+  "fields": {
+    "totalSize":  { "offset": 1, "size": 2, "endian": "le" },
+    "category":   { "offset": 3, "size": 1 },
+    "subCategory":{ "offset": 4, "size": 1 },
+    "command":    { "offset": 5, "size": 1 },
+    "fragTotal":  { "offset": 6, "size": 1 },
+    "fragIndex":  { "offset": 7, "size": 1 },
+    "sessionId":  { "offset": 8, "size": 2, "endian": "le" }
+  },
+  "maxReassembledSize": 32768,
+  "preAuthTimeoutMs": 30000
+}
