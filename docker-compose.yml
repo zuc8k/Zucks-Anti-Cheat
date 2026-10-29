@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  web:
+    build: { context: ./packages/web }
+    ports: ["3000:80"]
+    depends_on: [server]
+    environment:
+      VITE_API: "http://localhost:8080"
+      VITE_WS:  "ws://localhost:8080"
+
+  server:
+    build: { context: ./packages/server }
+    ports: ["8080:8080"]
+    environment:
+      ZUCKS_JWT_SECRET: "change-in-prod"
+      ZUCKS_IPC: "/tmp/zucks_engine.sock"
+      ZUCKS_PROFILES: "/app/profiles"
+    volumes:
+      - ./profiles:/app/profiles:ro
+
+  engine:
+    build: { context: ./packages/engine }
+    volumes:
+      - ./profiles:/app/profiles:ro
+      - /tmp/zucks_engine.sock:/tmp/zucks_engine.sock
+    cap_add: ["NET_ADMIN"]
+    network_mode: host
