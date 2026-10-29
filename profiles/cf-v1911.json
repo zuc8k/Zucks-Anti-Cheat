@@ -1,0 +1,17 @@
+{
+  "id": "cf-v1911",
+  "displayName": "CrossFire SA v1911",
+  "magic": [241],
+  "headerSize": 8,
+  "fields": {
+    "totalSize":  { "offset": 1, "size": 2, "endian": "le" },
+    "category":   { "offset": 3, "size": 1 },
+    "subCategory":{ "offset": 4, "size": 1 },
+    "command":    { "offset": 5, "size": 1 },
+    "fragTotal":  { "offset": 6, "size": 1 },
+    "fragIndex":  { "offset": 7, "size": 1 }
+  },
+  "maxReassembledSize": 17408,
+  "preAuthTimeoutMs": 35000,
+  "notes": "Legacy v1911 leaked binary"
+}
