@@ -1,0 +1,16 @@
+body { font-family: 'Segoe UI', sans-serif; background:#0d1117; color:#c9d1d9; margin:0; }
+header { background:#161b22; padding:20px; display:flex; justify-content:space-between; align-items:center; }
+header h1 { margin:0; font-size:22px; }
+.badge { padding:6px 12px; border-radius:6px; background:#30363d; font-size:13px; }
+.badge.online { background:#238636; }
+.badge.offline { background:#da3633; }
+main { display:grid; grid-template-columns:1fr 1fr; gap:20px; padding:20px; max-width:1200px; margin:auto; }
+.card { background:#161b22; border:1px solid #30363d; border-radius:10px; padding:20px; }
+.card h2 { margin-top:0; font-size:16px; color:#58a6ff; }
+.stat { display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #21262d; }
+.stat strong { color:#7ee787; }
+#banList { list-style:none; padding:0; }
+#banList li { padding:6px; background:#0d1117; border-radius:4px; margin-bottom:4px; font-family:monospace; }
+input { padding:8px; background:#0d1117; border:1px solid #30363d; color:#c9d1d9; border-radius:6px; }
+button { padding:8px 16px; background:#238636; color:white; border:none; border-radius:6px; cursor:pointer; margin-left:6px; }
+button:hover { background:#2ea043; }
