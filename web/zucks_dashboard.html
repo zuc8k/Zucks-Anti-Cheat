@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zucks-Anti-Cheat Dashboard</title>
+<link rel="stylesheet" href="zucks_style.css">
+</head>
+<body>
+<header>
+  <h1>🛡️ Zucks-Anti-Cheat</h1>
+  <span id="status" class="badge">Connecting...</span>
+</header>
+<main>
+  <section class="card">
+    <h2>System Status</h2>
+    <div class="stat"><span>Banned Players</span><strong id="banned">-</strong></div>
+    <div class="stat"><span>Active Connections</span><strong id="conns">-</strong></div>
+    <div class="stat"><span>Version</span><strong id="version">-</strong></div>
+  </section>
+
+  <section class="card">
+    <h2>Banned IPs</h2>
+    <div style="margin-bottom:10px">
+      <input id="unbanInput" placeholder="1.2.3.4">
+      <button onclick="unban()">Unban</button>
+      <button onclick="refresh()">Refresh</button>
+    </div>
+    <ul id="banList"></ul>
+  </section>
+</main>
+<script src="zucks_app.js"></script>
+</body>
+</html>
