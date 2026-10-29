@@ -1,0 +1,12 @@
+{
+  "id": "cf-generic-tcp",
+  "displayName": "Generic TCP (fallback)",
+  "magic": [],
+  "headerSize": 4,
+  "fields": {
+    "totalSize": { "offset": 0, "size": 4, "endian": "be" }
+  },
+  "maxReassembledSize": 65535,
+  "preAuthTimeoutMs": 20000,
+  "fallback": true
+}
